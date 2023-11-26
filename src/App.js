@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, } from "react-router-dom";
+
+import {
+  About,
+  Contact,
+  Experience,
+  Hero,
+  Navbar,
+  Tech,
+  Works,
+  StarsCanvas,
+} from "./components";
+
+import "./App.css";
+import Footer from "./components/Footer";
+import Whatsapp from "./components/Whatsapp";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <div className="">
+          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+            <Navbar />
+            <Hero />
+            <About/>
+            <Experience />
+            <Tech />
+            <Works />
+            <Contact />
+            <Footer/>
+            <Whatsapp/>
+            
+          </div>
+          <div className="relative z-0">
+            <StarsCanvas />
+          </div>          
+        </div>
+      </BrowserRouter>
+    </>
   );
 }
 
